@@ -26,13 +26,13 @@ body {
   }
 
   .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+      padding-top: 200px;
+      padding-bottom: 200px;
   }
 
   .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 25px;
+      padding-bottom: 25px;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
@@ -167,3 +167,15 @@ body {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
   }
+
+#allah {
+
+    :hover {
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transform: scale(1.1);
+    border-bottom: 2px solid #1abc9c;
+  }
+}
