@@ -45,11 +45,32 @@ body {
   }
 
   .bg-4 {
-      background-color: #2f2f2f;
+      // background-color: #2f2f2f;
       color: #ffffff;
       padding-top: 120px;
       padding-bottom: 120px;
+      padding: 2em 0 .25em 0;
+      background: #015289;
+      background: -moz-linear-gradient(top,rgba(33,118,166,1) 0,rgba(69,181,251,1) 100%);
+      background: -webkit-linear-gradient(top,rgba(33,118,166,1) 0,rgba(69,181,251,1) 100%);
+      background: linear-gradient(to bottom,rgba(33,118,166,1) 0,rgba(69,181,251,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe6633',endColorstr='#73a9d3',GradientType=0);
+color: #fff;
   }
+
+li {
+  list-style-type: none;
+}
+
+#spreadIt {
+    max-width: 1600px;
+    margin: auto;
+}
+
+#foot{
+  max-width: 1600px;
+  margin: auto;
+}
 
   @import url(https://fonts.googleapis.com/css?family=Roboto:100,700;);
   .snip1585 {
@@ -189,4 +210,19 @@ img {
       -ms-transition: all .3s ease-in-out;
       transform: scale(1.1);
     }
+}
+
+#2feet {
+  float: right;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  height: 250px;
+  right: 250px;
+  top: -255px;
+}
+
+#t {
+
 }
