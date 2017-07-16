@@ -2,6 +2,7 @@ import './styles/screen.scss'
 
 const main = () => {
   document.querySelector('h1').textContent += ''
+  var dis = document.getElementById('Wel').style.display = none;
 }
 
 document.addEventListener('DOMContentLoaded', main)
