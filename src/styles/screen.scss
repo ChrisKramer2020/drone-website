@@ -18,13 +18,20 @@ body {
   font-size: 50px;
 }
 
+a {
+  
+}
+
 h3#where {
   margin-bottom: 100px;
+  color: rgba(0, 0, 0, 0.69);
 }
 
 #dp-spin {
-pointer-events: none;
-
+  pointer-events: none;
+    @media (max-width: 360px) {
+      display: none;
+    }
 }
 
 
@@ -297,6 +304,7 @@ input {
     font-weight: 400;
     letter-spacing: 1px;
     margin: 0;
+    color: #fff;
     text-transform: uppercase;
   }
 
