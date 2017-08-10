@@ -16,14 +16,28 @@ body {
 
 .h3,h3 {
   font-size: 50px;
+  font-weight: 800;
 }
 
 a {
   color: #fff;
+    :hover {
+      text-decoration: none;
+      color: inherit;
+    }
 }
+
+#dow {
+  pointer-events: none;
+  text-decoration: none;
+  color: inherit;
+
+}
+
 #b {
   color: #000;
   text-decoration: none;
+  font-weight: 100;
 }
 h3#where {
   margin-bottom: 100px;
@@ -96,7 +110,8 @@ h3#Wel {
 .navbar-default .navbar-nav>li>a {
     color: #fff;
       :hover {
-
+      text-decoration: none;
+      color: inherit;
       }
   }
 
@@ -114,9 +129,9 @@ h3#Wel {
       padding-bottom: 120px;
       padding: 2em 0 .25em 0;
       background: #015289;
-      background: -moz-linear-gradient(top,#1c2d37 0,#21323c 100%);
-      background: -webkit-linear-gradient(top,#1c2d37 0,#21323c 100%);
-      background: linear-gradient(to bottom, #1c2d37 0, #21323c 100%);      // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe6633',endColorstr='#73a9d3',GradientType=0);
+      background: -moz-linear-gradient(top,#1c2d37 0,#22506a 100%);
+      background: -webkit-linear-gradient(top,#1c2d37 0,#22506a 100%);
+      background: linear-gradient(to bottom, #1c2d37 0, #22506a 100%);
 color: #fff;
   }
 
@@ -355,9 +370,9 @@ input {
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
     border-bottom: 2px solid #fff;
-    transform: scale(1.1);
+    // transform: scale(1.1);
     color: #fff;
-    page-break-after: avoid;
+    page-break-after: inherit;
   }
 }
 
