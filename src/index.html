@@ -4,9 +4,57 @@
   <title>Drone Enterprise</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js">
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+      moveRight();
+    }, 3000);
+  });
+
+  var slideCount = $('#slider,#j-slider li').length;
+  var slideWidth = $('#slider,#j-slider li').width();
+  var slideHeight = $('#slider,#j-slider li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+
+  $('#slider,#j-slider').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+  $('#slider,#j-slider,li:last-child').prependTo('#slider,#j-slider');
+
+  function moveLeft() {
+    $('#slider,#j-slider').animate({
+      left: + slideWidth
+    }, 200, function () {
+      $('#slider,#j-slider,li:last-child').prependTo('#slider,#j-slider');
+      $('#slider,#j-slider').css('left', '');
+    });
+  };
+
+  function moveRight() {
+    $('#slider #j-slider').animate({
+      left: - slideWidth
+    }, 200, function () {
+      $('#slider #j-slider,li:first-child').appendTo('#slider #j-slider');
+      $('#slider #j-slider').css('left', '');
+    });
+  };
+
+  $('control').click(function () {
+    moveLeft();
+  });
+
+  $('control-next').click(function () {
+    moveRight();
+  });
+
+});
+</script>
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -21,15 +69,32 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li id="a"><a href="#">WHO</a></li>
-        <li id="a"><a href="#what">WHAT</a></li>
-        <li id="a"><a href="#Equipment">VIDEOS</a></li>
+        <li id="b"><a href="#">WHO</a></li>
+        <li id="b"><a href="#what">WHAT</a></li>
+        <li id="b"><a href="#Equipment">VIDEOS</a></li>
       </ul>
     </div>
   </div>
 </nav>
   <div class="container-fluid bg-1 text-center">
+    <h1>Incredibly Basic Slider</h1>
+    <div id="slider">
+      <a href="#" class="control-next"></a>
+      <a href="#" class="control"></a>
+      <ul id="j-slider">
+        <li id="slide-1" class="slides">SLIDE 1</li>
+        <li id="slide-2" class="slides">SLIDE 2</li>
+        <li id="slide-3" class="slides">SLIDE 3</li>
+        <li id="slide-4" class="slides">SLIDE 4</li>
+      </ul>
+    </div>
+
+    <div class="slider_option">
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox">Autoplay Slider</label>
+    </div>
   <h3 id="Wel">Welcome.</h3>
+
   <video src="" id="player">Your browser does not support videos </video>
   <!-- <img src="https://www.cliftoncameras.co.uk/uploads/products/DJIMavicProDroneImage1.png" alt="drone" id="dp-spin" class="img-circle"> -->
   <h3></h3>
