@@ -1,34 +1,53 @@
 import './styles/screen.scss'
 
 const main = () => {
-  document.querySelector('h1').textContent += ''
-  var dis = document.getElementById('Wel').style.display = none;
-  var images = [
-  'http://8k.hdwallpaperup.com/wp-content/uploads/2016/12/Jones-Beach-Australia-4K-Wallpaper.jpg',
-  'http://8k.hdwallpaperup.com/wp-content/uploads/2017/02/Musha-Cay-Island-in-the-Bahamas-5K-Wallpaper-680x425.jpg',
-  'http://8k.hdwallpaperup.com/wp-content/uploads/2017/01/Lake-Sunset-Trees-8K-Wallpaper-680x425.jpg',
-  'http://8k.hdwallpaperup.com/wp-content/uploads/2016/12/Jones-Beach-Australia-4K-Wallpaper.jpg',
-  'https://tse1.mm.bing.net/th?&id=OIP.M36006a548e63f173365df6e89e14aba6o0&w=310&h=173&c=0&pid=1.9&rs=0&p=0&r=0',
-  'https://tse4.mm.bing.net/th?id=OIP.tVABsB9ks01XbiMvnO7rpAFNC7&w=244&h=160&c=7&qlt=90&o=4&pid=1.7'
-];
+  $(document).ready(function ($) {
 
-var num=0;
-var slider;
-function next() {
-  var slider=document.getElementById('workin'); num++;
-  if (num >= images.length) {
-    num=0;
-  }
-  slider.src=images[num]
-}
+  $('#checkbox').change(function(){
+    setInterval(function () {
+      moveRight();
+    }, 3000);
+  });
 
-function prev() {
-  var slider=document.getElementById('workin'); num--;
-  if (num < 0) {
-    num=images.length-1;
-  }
-  slider.src=images[num];
-  }
+  var slideCount = $('#slider #j-slider .slides').length;
+  var slideWidth = $('#slider #j-slider .slides').width();
+  var slideHeight = $('#slider #j-slider .slides').height();
+  var sliderUlWidth = slideCount * slideWidth;
+
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+
+  $('#slider #j-slider').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+  $('#slider #j-slider .slides:last-child').prependTo('#slider #j-slider');
+
+  $(function moveLeft() {
+    $('#slider #j-slider').animate({
+      left: + slideWidth
+    }, 200, function () {
+      $('#slider #j-slider .slides:last-child').prependTo('#slider #j-slider');
+      $('#slider #j-slider').css('left', '');
+    });
+  });
+
+  $(function moveRight() {
+    $('#slider #j-slider').animate({
+      left: - slideWidth
+    }, 200, function () {
+      $('#slider #j-slider li:first-child').appendTo('#slider #j-slider');
+      $('#slider #j-slider').css('left', '');
+    });
+  });
+
+  $('.control').click(function () {
+    moveLeft();
+  });
+
+  $('.control-next').click(function () {
+    moveRight();
+  });
+
+  });
+
 }
 
 document.addEventListener('DOMContentLoaded', main)
